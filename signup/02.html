@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8" />
+
+      <script src="js/sign.js"></script>
+
+      <style>
+      .focus {border: 2px solid red;}
+      .unfocus {background:white;}
+      #attention.show{
+        font-size:16px;
+        padding:6px;
+        border:1px solid #fff;
+        margin:10px;
+        background-color: pink;
+      }
+      #notice_pwd{color: red;}
+      </style>
+
+    </head>
+
+    <body>
+
+      <h1>注册</h1>
+      <div id="attention"></div>
+      <form method="post"  name="myform" onsubmit="return checkPost()" >
+      <p>用户名: <input type="text" name="username" onBlur="setStyle(this.id); checkuser()" id="uname_id"/></p>
+      <p>密码: <input type="password" name="pwd" onblur="setStyle(this.id)" id="pwd"/></p>
+      <p>密码确认: <input type="password" name="pwd_r" onblur="setStyle(this.id)" oninput="myformPassword()" id="pwd_r"/></p>
+      <p id="notice_pwd"></p>
+      <p>出生日期：<input type="date" name="date"></p>
+      <p>用户类型：
+		<select name="mold">
+		<option value="student">student</option>
+		<option value="worker">worker</option>
+		<option value="farmer">farmer</option>
+		</select>
+	  </p>
+      <p>技能优势:
+        <input type="checkbox" name="skill" value="php"/>php
+        <input type="checkbox" name="skill" value="java"/>java
+        <input type="checkbox" name="skill" value="c#"/>c#
+        <input type="checkbox" name="skill" value="c"/>c
+      </p>
+
+      <input type="submit" value="提交"/>
+    </form>
+    </body>
+
+
+
+
+</html>
